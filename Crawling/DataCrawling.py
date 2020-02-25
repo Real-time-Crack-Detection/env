@@ -4,6 +4,11 @@ import os
 from selenium.webdriver.common.keys import Keys
 from urllib.request import urlopen
 
+# It requires some modules.
+# pip install selenuim
+# pip install urllib
+# pip install bs4
+
 DEFAULT_PATH = './cracks'
 
 browser = webdriver.Chrome('chromedriver.exe')
