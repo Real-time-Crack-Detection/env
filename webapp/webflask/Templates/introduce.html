@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include 'inc/head-sub.html' ignore missing %}
+</head>
+
+<body>
+
+<header>
+
+  <!-- Navbar -->
+  {% include 'inc/navbar.html' ignore missing %}
+  <!-- Navbar -->
+
+</header>
+
+<!--Main layout-->
+<main class="mt-5 pt-4">
+  <!----------기업소개 설명란.--------------------------------------------->
+  <!--container dark-grey-text: 상단여백(mt) 5크기 설정함.-->
+  <!--container 안에 코드 작성해야 상단,좌우 여백 자동으로 맞춰짐.-->
+  <div class="container dark-grey-text mt-5">
+
+    <!--Grid row 한줄라인에 회사사진 + 설명글 -->
+    <div class="row wow fadeIn">
+
+      <!--Grid column md:총 12개 /6개 사용, 회사 설명하는곳-->
+      <div class="col-md-6 mb-4">
+        <h2 class="font-weight-bold deep-orange-lighter-hover mb-3"> 회사 소개</h2>
+        <p class="brown-lighter-hover">HANSUNG SDS는 이러이러한 회사이다.</p>
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column md:총 12개 /6개 사용, 회사 이미지 첨부하는 곳-->
+      <div class="col-md-6 mb-4">
+        <img src="static/img/introduce/company.jpg" class="img-fluid" alt="">
+
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+    <hr>
+    <div class="row wow fadeIn">
+      <div class="col-md-6 mb-4">
+        <ul>
+          <li>
+            <i class="icon">
+              <img src="/static/img/introduce/icon-1.png" alt="it">
+            </i>
+            <strong class="txt2">IT경험</strong>
+            <span>1년</span>
+          </li>
+          <li>
+            <i class="icon">
+              <img src="/static/img/introduce/icon-2.png" alt="매출액" >
+            </i>
+            <strong class="txt2">10조원</strong>
+            <span>매출액(2019년)</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6 mb-4">
+        <ul>
+          <li>
+            <i class="icon">
+              <img src="/static/img/introduce/icon-3.png" alt="it">
+            </i>
+            <strong class="txt2">5,000명</strong>
+            <span>임직원(2020년02월)</span>
+          </li>
+
+          <li>
+            <i class="icon">
+              <img src="/static/img/introduce/icon-4.png" alt="it">
+            </i>
+            <strong class="txt2">100개</strong>
+            <span>전국지점</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!--Footer-->
+{% include 'inc/footer.html' ignore missing %}
+<!--/.Footer-->
+
+<!-- Modal -->
+{% include 'inc/modal.html' ignore missing %}
+<!--/.Modal-->
+
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="static/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="static/js/mdb.min.js"></script>
+<!-- Initializations -->
+<script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+
+  </script>
+</body>
+
+</html>

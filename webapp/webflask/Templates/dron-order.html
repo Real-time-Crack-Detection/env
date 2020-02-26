@@ -1,0 +1,183 @@
+<!----------sub menu-제품구매-드론구매 click html--------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include 'inc/head-sub.html' ignore missing %}
+</head>
+
+<body>
+
+<header>
+
+  <!-- Navbar -->
+  {% include 'inc/navbar.html' ignore missing %}
+  <!-- Navbar -->
+
+</header>
+
+<!--Main layout-->
+<main class="mt-5 pt-4">
+  <!----------dron-1 제품 설명란.--------------------------------------------->
+  <!--container dark-grey-text: 상단여백(mt) 5크기 설정함.-->
+  <div class="container dark-grey-text mt-5">
+
+    <!--Grid row-->
+    <div class="row wow fadeIn">
+
+      <!--Grid column-->
+      <div class="col-md-6 mb-4">
+
+        <img src="static/img/dron-order/dron1.jpg" class="img-fluid" alt="">
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column md:총 12개 -->
+      <div class="col-md-6 mb-4">
+
+        <!--Content-->
+        <ul class="p-4">
+
+          <div class="mb-3">
+            <a href="">
+              <span class="badge purple mr-1">Category 1</span>
+            </a>
+            <a href="">
+              <span class="badge blue mr-1">New</span>
+            </a>
+            <a href="">
+              <span class="badge red mr-1">Bestseller</span>
+            </a>
+          </div>
+
+          <p class="lead">
+              <span class="mr-1">
+                <del>500,000원</del>
+              </span>
+            <span>300,000원</span>
+          </p>
+
+          <p class="lead font-weight-bold">제품 소개</p>
+
+          <li>2배 광학 줌 카메라</li>
+          <li>4배 무손실 줌 FHD 동영상</li>
+          <li>8 km 1080p 영상 전송</li>
+          <li>비행 시간 31분</li>
+          <li>전방위 장애물 감지 </li>
+          <li> 하이퍼랩스</li>
+
+          <form class="d-flex justify-content-left">
+            <!-- Default input -->
+            <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+            <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+              <i class="fas fa-shopping-cart ml-1"></i>
+            </button>
+
+          </form>
+
+      </div>
+      <!--Content-->
+
+    </div>
+    <!--Grid column-->
+
+  </div>
+  <!--Grid row-->
+  <hr>
+  <!----------dron-2 제품 설명란.--------------------------------------------->
+  <div class="container dark-grey-text mt-5">
+
+    <!--Grid row-->
+    <div class="row wow fadeIn">
+
+      <!--Grid column-->
+      <div class="col-md-6 mb-4">
+
+        <img src="static/img/dron-order/dron2.jpg" class="img-fluid" alt="">
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column md:총 12개 -->
+      <div class="col-md-6 mb-4">
+
+        <!--Content-->
+        <ul class="p-4">
+
+          <div class="mb-3">
+            <a href="">
+              <span class="badge purple mr-1">Category 2</span>
+            </a>
+            <a href="">
+              <span class="badge blue mr-1">New</span>
+            </a>
+            <a href="">
+              <span class="badge red mr-1">Bestseller</span>
+            </a>
+          </div>
+
+          <p class="lead">
+              <span class="mr-1">
+                <del>800,000원</del>
+              </span>
+            <span>500,000원</span>
+          </p>
+
+          <p class="lead font-weight-bold">제품 소개</p>
+
+          <li>Hasselblad 카메라</li>
+          <li>20 MP 1” CMOS 센서</li>
+          <li>8 km 1080p 영상 전송</li>
+          <li>비행 시간 31분</li>
+          <li>전방위 장애물 감지 </li>
+          <li>하이퍼랩스</li>
+
+          <form class="d-flex justify-content-left">
+            <!-- Default input -->
+            <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+            <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+              <i class="fas fa-shopping-cart ml-1"></i>
+            </button>
+
+          </form>
+
+        </ul>
+      <!--Content-->
+
+    </div>
+    <!--Grid column-->
+
+  </div>
+
+  <hr>
+  </div>
+</main>
+
+<!--Footer-->
+{% include 'inc/footer.html' ignore missing %}
+<!--/.Footer-->
+<!-- Modal -->
+{% include 'inc/modal.html' ignore missing %}
+<!--/.Modal-->
+
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="static/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="static/js/mdb.min.js"></script>
+<!-- Initializations -->
+<script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+
+  </script>
+</body>
+
+</html>
