@@ -3,9 +3,11 @@ from flask import make_response
 from flask import Response
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import *
+from signup import *
+from login import *
 
-SQL_ID = "ai"
-SQL_PASS = "ai"
+SQL_ID = "integer"
+SQL_PASS = "dmswjd331"
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://' + SQL_ID + ':' + SQL_PASS + '@localhost:3306/capstone'
@@ -20,7 +22,7 @@ session = db.session
 #첫 home 화면
 @app.route('/')
 def main():
-    return render_template('base.html')
+    return render_template('base.html', name="Sign In")
 
 #기업정보-기업소개
 @app.route('/intro')
@@ -37,6 +39,22 @@ def dronorder():
 def text():
     return render_template('text.html')
 
+# sign up 버튼 클릭시 db로 데이터 insert
+@app.route('/signup', methods = ['POST'])
+def signupButton():
+    sign_up(session)
+
+    return render_template('base.html', name="")
+
+# 로그인 클릭시 화면
+@app.route('/signin', methods = ['POST'])
+def loginButton():
+    name = log_in(session)
+
+    if name == False:  # 로그인 실패했을떄
+        return render_template('base.html', name="")
+    else:
+        return render_template('base.html', name=name)
 
 # 임시 진입점
 if __name__ == "__main__":

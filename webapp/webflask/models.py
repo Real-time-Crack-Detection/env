@@ -39,3 +39,4 @@ class User(db.Model):
     name = db.Column(db.String(50))
     email = db.Column(db.String(50))
     phonenumber = db.Column(db.String(50))
+    code = db.Column(db.String(50))

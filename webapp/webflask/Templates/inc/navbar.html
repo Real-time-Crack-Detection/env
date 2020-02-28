@@ -107,12 +107,16 @@
 				</li>
 
 				<!-- 로그인 유저 이름 -->
+
 				<li class="nav-item">
-					<a href="#"  class="nav-link" >
+					<a href="#"  class="nav-link"
+					data-toggle="modal" data-target="#basicExampleModal1" id="name_space">
 						<i class="fas fa-user"></i>Sign-In
 					</a>
 				</li>
-
+				<script>
+					document.getElementById('name_space').innerHTML = '{{ name }}';
+				</script>
 				<li class="nav-item">
 					<a href="#" id="btnSingin" class="nav-link border border-light rounded"
 					   data-toggle="modal" data-target="#basicExampleModal">
