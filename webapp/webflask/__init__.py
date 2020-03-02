@@ -51,10 +51,7 @@ def signupButton():
 def loginButton():
     name = log_in(session)
 
-    if name == False:  # 로그인 실패했을떄
-        return render_template('base.html', name="")
-    else:
-        return render_template('base.html', name=name)
+    return render_template('base.html', name=name)
 
 # 임시 진입점
 if __name__ == "__main__":

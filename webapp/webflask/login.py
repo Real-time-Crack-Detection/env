@@ -15,9 +15,9 @@ def log_in(session):
             print("login")
         else:  # id는 맞지만 password가 틀렸을때
             print("login fail")
-            name = False
+            name = "Sign In"
     except:  # id가 틀렸을 때
-        name = False
+        name = "Sign In"
 
     finally:
         return name
