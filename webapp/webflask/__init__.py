@@ -39,6 +39,11 @@ def dronorder():
 def text():
     return render_template('text.html')
 
+#내역조회
+@app.route('/history')
+def history():
+    return render_template('view-history.html')
+
 # sign up 버튼 클릭시 db로 데이터 insert
 @app.route('/signup', methods = ['POST'])
 def signupButton():

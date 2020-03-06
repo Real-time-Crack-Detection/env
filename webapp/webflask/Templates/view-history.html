@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--내역조회 페이지-->
+<head>
+  {% include 'inc/head-sub.html' ignore missing %}
+</head>
+
+<body>
+
+<header>
+
+  <!-- Navbar -->
+  {% include 'inc/navbar.html' ignore missing %}
+  <!-- Navbar -->
+
+</header>
+
+<!--Main layout-->
+<main class="mt-5 pt-4">
+  <!--container dark-grey-text: 상단여백(mt) 5크기 설정함.-->
+  <!--container 안에 코드 작성해야 상단,좌우 여백 자동으로 맞춰짐.-->
+  <div class="container dark-grey-text mt-5">
+        <h2 class="font-weight-bold deep-orange-lighter-hover mb-3"> 내역 조회</h2>
+
+      <!--임의로 테이블 내용 작성해둠-->
+          <table class="table table-striped">
+              <thead>
+              <tr>
+                  <th>No.</th>
+                  <th>Title</th>
+                  <th>Date</th>
+                  <th>Prediction</th>
+                  <th>Location</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>1</td>
+                  <td>한성아파트 1-101호</td>
+                  <td>2020.2.14 15:33</td>
+                  <td>Crack</td>
+                  <td>13:50:32</td>
+              </tr>
+              <tr>
+                  <td>2</td>
+                  <td>한성아파트 3-201호</td>
+                  <td>2020.2.16 10:03</td>
+                  <td>Non-Crack</td>
+                  <td>13:48:21</td>
+              </tr>
+              <tr>
+                  <td>3</td>
+                  <td>한성아파트 2-501호</td>
+                  <td>2020.2.17 09:43</td>
+                  <td>Crack</td>
+                  <td>12:46:50</td>
+              </tr>
+              </tbody>
+          </table>
+          <hr/>
+
+      <!--pagination (페이지 번호)-->
+            <nav aria-label="Page navigation">
+                <div class="text-center">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </div>
+            </nav>
+
+            <!-- 검색 -->
+              <form class="form-inline justify-content-center">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success btn-rounded btn-sm my-0" type="submit">Search</button>
+              </form>
+  </div>
+</main>
+
+<!--Footer-->
+{% include 'inc/footer.html' ignore missing %}
+<!--/.Footer-->
+
+<!-- Modal -->
+{% include 'inc/modal.html' ignore missing %}
+<!--/.Modal-->
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="static/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="static/js/mdb.min.js"></script>
+<!-- Initializations -->
+<script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+
+  </script>
+</body>
+
+</html>

@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05e050f5-47f6-4eb5-8686-323574dd686d" name="Default Changelist" comment="" />
+    <list default="true" id="05e050f5-47f6-4eb5-8686-323574dd686d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/webflask/Templates/view-history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webapp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webflask/Templates/inc/modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/webflask/Templates/inc/modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webflask/Templates/inc/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/webflask/Templates/inc/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webflask/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/webflask/__init__.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1XqT5mFJChogsIvvXpJacQkVk2s" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,8 +50,9 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -49,6 +76,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/webflask/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -70,6 +98,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\qlqlx\PycharmProjects\webapp\webflask\__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -91,6 +120,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/webflask/start_webapp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -112,6 +142,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\qlqlx\PycharmProjects\webapp\webflask\start_webapp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -174,45 +205,87 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581772443327</updated>
+      <workItem from="1582777455657" duration="611000" />
+      <workItem from="1582778926318" duration="1695000" />
+      <workItem from="1582780643571" duration="989000" />
+      <workItem from="1582781648681" duration="4874000" />
+      <workItem from="1582791703092" duration="9246000" />
+      <workItem from="1582938574530" duration="1770000" />
+      <workItem from="1582953285394" duration="115000" />
+      <workItem from="1582953720283" duration="4394000" />
+      <workItem from="1583214585336" duration="916000" />
+      <workItem from="1583393933218" duration="15808000" />
+      <workItem from="1583481805199" duration="1235000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="921" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582639974155">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="233" y="0" width="813" height="680" key="#Inspections" timestamp="1582781412197">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="233" y="0" width="813" height="680" key="#Inspections/0.0.1280.680@0.0.1280.680" timestamp="1582781412197" />
+    <state x="63" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582779240457">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="63" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1582779240457" />
+    <state x="703" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582960086985">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="703" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1582960086985" />
     <state x="921" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1582639974155" />
-    <state x="774" y="180" key="FileChooserDialogImpl" timestamp="1582487217696">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="325" y="0" key="#start_webapp_(1)" timestamp="1582779174559">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="325" y="0" key="#start_webapp_(1)/0.0.1280.680@0.0.1280.680" timestamp="1582779174559" />
+    <state x="645" y="149" key="FileChooserDialogImpl" timestamp="1582780745619">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="645" y="149" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582780745619" />
     <state x="774" y="180" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582487217696" />
-    <state width="1083" height="216" key="GridCell.Tab.0.bottom" timestamp="1582715159975">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="714" height="197" key="GridCell.Tab.0.bottom" timestamp="1583481444760">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="714" height="197" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583481444760" />
     <state width="1083" height="216" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582715159975" />
-    <state width="1083" height="216" key="GridCell.Tab.0.center" timestamp="1582715159975">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="714" height="197" key="GridCell.Tab.0.center" timestamp="1583481444759">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="714" height="197" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1583481444759" />
     <state width="1083" height="216" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582715159975" />
-    <state width="1083" height="216" key="GridCell.Tab.0.left" timestamp="1582715159975">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="714" height="197" key="GridCell.Tab.0.left" timestamp="1583481444759">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="714" height="197" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1583481444759" />
     <state width="1083" height="216" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582715159975" />
-    <state width="1083" height="216" key="GridCell.Tab.0.right" timestamp="1582715159975">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="714" height="197" key="GridCell.Tab.0.right" timestamp="1583481444760">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="714" height="197" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1583481444760" />
     <state width="1083" height="216" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582715159975" />
-    <state x="370" y="104" key="SettingsEditor" timestamp="1582624304073">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="49" y="0" key="SettingsEditor" timestamp="1582781499296">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="49" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1582781499296" />
     <state x="370" y="104" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582624304073" />
-    <state x="522" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1582713647766">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="435" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1583481805484">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="435" y="193" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1583481805484" />
     <state x="522" y="234" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582713647766" />
-    <state x="656" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582621916779">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="633" y="86" width="620" height="538" key="find.popup" timestamp="1583466966016">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="633" y="86" width="620" height="538" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1583466966016" />
+    <state x="547" y="120" width="672" height="560" key="search.everywhere.popup" timestamp="1583464506762">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="547" y="120" width="672" height="560" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1583464506762" />
     <state x="656" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582621916779" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/webapp$start_webapp__1_.coverage" NAME="start_webapp (1) Coverage Results" MODIFIED="1583481822180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/webflask" />
   </component>
 </project>
