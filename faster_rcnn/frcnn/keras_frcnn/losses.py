@@ -1,8 +1,9 @@
 from keras import backend as K
 from keras.objectives import categorical_crossentropy
+import tensorflow as tf
 
-if K.image_data_format() == 'tf':
-	import tensorflow as tf
+#if K.image_data_format() == 'tf':
+#	import tensorflow as tf
 
 lambda_rpn_regr = 1.0
 lambda_rpn_class = 1.0
