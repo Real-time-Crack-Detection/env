@@ -50,14 +50,13 @@ photo_list = browser.find_elements_by_tag_name("img.rg_i")
 print('Find object : ', len(photo_list))
 index = 0
 for i in range(0, len(photo_list)):
-
-    photo_list[i].click()
-    print(photo_list[i])
-
-    time.sleep(2)
-
-
     try:
+        photo_list[i].click()
+        print(photo_list[i])
+
+        time.sleep(2)
+
+
         html_objects = browser.find_element_by_css_selector('#Sva75c > div > div > div.pxAole > div.tvh9oe.BIB1wf > div > div.OUZ5W > div.zjoqD > div > div.v4dQwb > a > img')
         current_src = html_objects.get_attribute('src')
         print("src :" + current_src)
@@ -70,17 +69,17 @@ for i in range(0, len(photo_list)):
         print(t)
         if t is None :
             continue
+        
+        filename ="{}/{}/{}{}{}".format(DEFAULT_PATH, keyword,keyword, str(index), ".jpg")
+        with open(filename, "wb") as f:
+            f.write(t)
+            index += 1
+            current_src = ""
+            print("Img Save Success")
+        index += 1
     except Exception as e:
         print(e)
 
-
-    filename ="{}/{}/{}{}{}".format(DEFAULT_PATH, keyword,keyword, str(index), ".jpg")
-    with open(filename, "wb") as f:
-        f.write(t)
-        index += 1
-        current_src = ""
-        print("Img Save Success")
-    index += 1
 
     exit_button = browser.find_element_by_css_selector('#Sva75c > div > div > div:nth-child(2) > a > div > svg > polygon')
     exit_button.click()
