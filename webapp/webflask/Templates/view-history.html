@@ -3,12 +3,19 @@
 <!--내역조회 페이지-->
 <head>
   {% include 'inc/head-sub.html' ignore missing %}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.css"/>
+<script src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
+<script>
+    jQuery(function($){
+        $("#datatable").DataTable();
+    });
+</script>
 </head>
 
 <body>
 
 <header>
-
   <!-- Navbar -->
   {% include 'inc/navbar.html' ignore missing %}
   <!-- Navbar -->
@@ -16,14 +23,14 @@
 </header>
 
 <!--Main layout-->
-<main class="mt-5 pt-4">
+<main class="mt-5 pt-5">
   <!--container dark-grey-text: 상단여백(mt) 5크기 설정함.-->
   <!--container 안에 코드 작성해야 상단,좌우 여백 자동으로 맞춰짐.-->
   <div class="container dark-grey-text mt-5">
         <h2 class="font-weight-bold deep-orange-lighter-hover mb-3"> 내역 조회</h2>
 
       <!--임의로 테이블 내용 작성해둠-->
-          <table class="table table-striped">
+          <table id="datatable" class="table table-bordered">
               <thead>
               <tr>
                   <th>No.</th>
@@ -58,25 +65,6 @@
               </tbody>
           </table>
           <hr/>
-
-      <!--pagination (페이지 번호)-->
-            <nav aria-label="Page navigation">
-                <div class="text-center">
-                  <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                  </ul>
-                </div>
-            </nav>
-
-            <!-- 검색 -->
-              <form class="form-inline justify-content-center">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success btn-rounded btn-sm my-0" type="submit">Search</button>
-              </form>
   </div>
 </main>
 
@@ -101,8 +89,6 @@
 <script type="text/javascript">
     // Animations initialization
     new WOW().init();
-
-
   </script>
 </body>
 

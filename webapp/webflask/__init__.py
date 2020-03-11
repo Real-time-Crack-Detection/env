@@ -39,7 +39,12 @@ def dronorder():
 def text():
     return render_template('text.html')
 
-#내역조회
+#실시간 탐지 html
+@app.route('/real-time')
+def time():
+    return render_template('real-time.html')
+
+#내역조회 html
 @app.route('/history')
 def history():
     return render_template('view-history.html')
