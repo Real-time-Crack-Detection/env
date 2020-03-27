@@ -1,23 +1,4 @@
 # coding: utf-8
-'''
-from sqlalchemy import Column, DateTime, MetaData, String, Table, Integer
-from sqlalchemy.dialects.mysql import INTEGER
-
-#metadata = MetaData()
-
-t_image = Table(
-    'image', metadata,
-    Column('number', INTEGER(11)),
-    Column('path', String(100)),
-    Column('save_date', DateTime)
-)
-
-t_user = Table(
-    'user', metadata,
-    Column('id', String(50)),
-    Column('password', String(50))
-)
-'''
 
 from sqlalchemy import Column, DateTime, ForeignKey, Integer, String, Text
 from flask_sqlalchemy import SQLAlchemy

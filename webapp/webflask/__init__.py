@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import *
 from signup import *
 from login import *
+from viewhistory import *
 
 SQL_ID = "integer"
 SQL_PASS = "dmswjd331"
@@ -19,6 +20,7 @@ engine = create_engine('mysql+pymysql://' + SQL_ID + ':' + SQL_PASS + '@localhos
 session = db.session
 
 name = "Sign in"
+code = "1"
 
 #첫 home 화면
 @app.route('/')
@@ -48,7 +50,8 @@ def time():
 #내역조회 html
 @app.route('/history')
 def history():
-    return render_template('view-history.html', name=name)
+    result_data = view_history(session, code)
+    return render_template('view-history.html', name=name, result_data=result_data)
 
 # sign up 버튼 클릭시 db로 데이터 insert
 @app.route('/signup', methods = ['POST'])
@@ -61,7 +64,8 @@ def signupButton():
 @app.route('/signin', methods = ['POST'])
 def loginButton():
     global name
-    name = log_in(session)
+    global code
+    name, code = log_in(session)
 
     return render_template('base.html', name=name)
 
