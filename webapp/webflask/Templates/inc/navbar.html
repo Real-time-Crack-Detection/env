@@ -80,8 +80,8 @@
 					</a>
 					<div class="dropdown-menu dropdown-primary"
 					     aria-labelledby="navbarDropdownMenuLink5">
-						<a class="dropdown-item" href="#!">실시간측정</a>
-						<a class="dropdown-item" href="#!">측정내역</a>
+						<a class="dropdown-item" href="http://127.0.0.1:5000/real-time">실시간탐지</a>
+						<a class="dropdown-item" href="http://127.0.0.1:5000/history">측정내역</a>
 						<a class="dropdown-item" href="#!">3번</a>
 					</div>
 				</li>
@@ -107,16 +107,20 @@
 				</li>
 
 				<!-- 로그인 유저 이름 -->
+
 				<li class="nav-item">
-					<a href="#"  class="nav-link" >
-						<i class="fas fa-user"></i>진선미
+					<a href="#"  class="nav-link"
+						data-toggle="modal" data-target="#basicExampleModal1" id="name_space">
+						<i class="fas fa-user"></i>Sign-In
 					</a>
 				</li>
-
+				<script>
+					document.getElementById('name_space').innerHTML = '{{ name }}';
+				</script>
 				<li class="nav-item">
 					<a href="#" id="btnSingin" class="nav-link border border-light rounded"
 					   data-toggle="modal" data-target="#basicExampleModal">
-						<i class="fas fa-sign-in-alt"></i>Sing-In
+						<i class="fas fa-sign-in-alt"></i>Sing-Up
 					</a>
 				</li>
 			</ul>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--내역조회 페이지-->
+<head>
+  {% include 'inc/head-sub.html' ignore missing %}
+    <style>
+        #datatable{
+            table-layout: fixed;
+        }
+        #datatable tr, #datatable td {
+            padding: 8px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+  <!-- Navbar -->
+  {% include 'inc/navbar.html' ignore missing %}
+  <!-- Navbar -->
+</header>
+
+<!--Main layout-->
+<main class="mt-5 pt-5">
+  <!--container dark-grey-text: 상단여백(mt) 5크기 설정함.-->
+  <!--container 안에 코드 작성해야 상단,좌우 여백 자동으로 맞춰짐.-->
+  <div class="container">
+      <h2 class="font-weight-bold deep-orange-lighter-hover mb-3"> 내역 조회</h2>
+      <hr/>
+         <!-- DataTable -->
+      <table id="datatable" class="display" style="width: 100%"></table>
+      <hr/>
+  </div>
+</main>
+
+<!--Footer-->
+{% include 'inc/footer.html' ignore missing %}
+<!--/.Footer-->
+
+<!-- Modal -->
+{% include 'inc/modal.html' ignore missing %}
+<!--/.Modal-->
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="static/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="static/js/mdb.min.js"></script>
+<!-- Initializations -->
+<script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+</script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet">
+
+<link href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" type="text/css" rel="stylesheet">
+
+<script type="text/javascript" src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
+
+<!--datatable-->
+<script type="text/javascript" src="static/js/table.js"></script>
+
+</body>
+
+</html>

@@ -1,5 +1,45 @@
 <!-- 로그인 화면 -->
+<!-- 로그인 -->
+<div class="modal fade" id="basicExampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel1"><strong><i class="fas fa-sign-in-alt">
+					로그인</i></strong> </h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<!-- 로그인 화면 구성 폼 -->
+				<form class="text-center border border-light p-5" action="http://localhost:5000/signin" method="POST">
+					<p class="h4 mb-4"><strong>Sign In</strong></p>
+
+					<!-- ID -->
+					<input type="text" name="defaultRegisterLoginID" class="form-control mb-4" placeholder="ID">
+
+					<!-- Password -->
+					<input type="text" name="defaultRegisterLoginPassword" class="form-control mb-4" placeholder="Password">
+
+					<hr>
+					<div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">취소하기</button>
+						<!-- 로그인 정보 db서버로 넘겨야함. -->
+						<button class="btn btn-primary" type="submit">로그인</button>
+					</div>
+				</form>
+				<!-- Default form register -->
+			</div>
+		</div>
+	</div>
+</div>
 <!-- Modal -->
+
+<!-- 회원가입 -->
 <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -12,36 +52,44 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<!-- 로그인 화면 구성 폼 -->
-				<form class="text-center border border-light p-5" action="#!">
+				<!-- 회원가입 화면 구성 폼 -->
+				<form class="text-center border border-light p-5" action="http://localhost:5000/signup" method="POST">
 
-					<p class="h4 mb-4"><strong>Sign in</strong></p>
+					<p class="h4 mb-4"><strong>Sign Up</strong></p>
 
 					<div class="form-row mb-4">
 						<div class="col">
 							<!-- First name -->
-							<input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
+							<input type="text" name="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
 						</div>
 						<div class="col">
 							<!-- Last name -->
-							<input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+							<input type="text" name="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
 						</div>
 					</div>
 
 					<!-- E-mail -->
-					<input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+					<input type="email" name="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+					<!-- ID -->
+					<input type="id" name="defaultRegisterFormID" class="form-control mb-4" placeholder="ID">
+
+					<!-- ID -->
+					<input type="id" id="defaultRegisterFormID" class="form-control mb-4" placeholder="ID">
 
 					<!-- Password -->
-					<input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-					<small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-						영어 + 숫자 조합 8자 이상 입력하시오.
-					</small>
+					<input type="password" name="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Password">
 
 					<!-- Phone number -->
-					<input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+					<input type="text" name="defaultRegisterPhonenumber" class="form-control" placeholder="Phone number(010-0000-0000)" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+
 					<small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
 						필수사항 - 핸드폰번호 입력하시오.
 					</small>
+
+					<!-- 제품코드 -->
+					<input type="code" name="defaultRegisterFormCode" class="form-control mb-4" placeholder="Code">
+
 
 					<!-- Newsletter 필수로 체크 안하면 로그인 가입 안됨 -->
 					<div class="custom-control custom-checkbox">
@@ -50,7 +98,7 @@
 					</div>
 
 					<!-- Sign up button -->
-					<button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+					<!--button class="btn btn-info my-4 btn-block" type="submit">Sign Up</button-->
 
 					<!-- Social register -->
 					<p>SNS으로 가입하기:</p>
@@ -67,13 +115,13 @@
 						<em></em> 가입정보는 1년동안 보관됩니다.
 						<!--                    <a href="#" target="_blank">terms of service</a>-->
 					</p>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">취소하기</button>
+						<!-- 회원가입 정보 db서버로 넘겨야함. -->
+						<button class="btn btn-primary" type="submit">가입완료</button>
+					</div>
 				</form>
 				<!-- Default form register -->
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">취소하기</button>
-				<!-- 회원가입 정보 db서버로 넘겨야함. -->
-				<button type="button" class="btn btn-primary">가입완료</button>
 			</div>
 		</div>
 	</div>
