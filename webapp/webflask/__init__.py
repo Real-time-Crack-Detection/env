@@ -20,7 +20,7 @@ engine = create_engine('mysql+pymysql://' + SQL_ID + ':' + SQL_PASS + '@localhos
 session = db.session
 
 name = "Sign in"
-code = "1"
+code = ""
 
 #첫 home 화면
 @app.route('/')
