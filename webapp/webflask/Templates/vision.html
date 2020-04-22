@@ -1,18 +1,9 @@
-<!----------sub menu-균열검사-실시간탐지 click--------------------------------------------->
+<!----------sub menu-기업정보-vision click--------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
-<!-- 실시간탐지 페이지-->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   {% include 'inc/head-sub.html' ignore missing %}
-  <style>
-    .w3-row-padding img {margin-bottom: 12px}
-  </style>
-
 </head>
-
 <body>
 <header>
   <!-- Navbar -->
@@ -25,27 +16,13 @@
   <!--container dark-grey-text: 상단여백(mt) 5크기 설정함.-->
   <!--container 안에 코드 작성해야 상단,좌우 여백 자동으로 맞춰짐.-->
   <div class="container dark-grey-text mt-5">
-      <h2 class="font-weight-bold deep-orange-lighter-hover mb-3">실시간 탐지</h2>
-    <hr/>
+      <h2 class="font-weight-bold deep-orange-lighter-hover mb-3"> VISION </h2>
 
-    <!--이미지 불러오기-->
-    <div class="w3-row-padding" style="margin-bottom:128px">
-
-      <div class="w3-half">
-        <img src="static/img/crack1.png" alt="" style="width: 100%">
-        <u>드론좌표 : .... </u><br>
-        <button type="button" class="btn btn-secondary">판단</button>
+      <div class="center">
+          <p class="diagram">
+              <img src="static/img/vision/visionImg.PNG" alt="VISION">
+          </p>
       </div>
-
-      <div class="w3-half">
-        <img src="static/img/crack2.png" alt="" style="width: 100%">
-        <div align="right">
-          <u>일시 : ....</u><br>
-          <button type="button" class="btn btn-secondary">기록</button>
-        </div>
-      </div>
-    </div>
-
   </div>
 </main>
 
@@ -56,6 +33,7 @@
 <!-- Modal -->
 {% include 'inc/modal.html' ignore missing %}
 <!--/.Modal-->
+
 
 <!-- SCRIPTS -->
 <!-- JQuery -->
@@ -70,6 +48,8 @@
 <script type="text/javascript">
     // Animations initialization
     new WOW().init();
+
+
   </script>
 </body>
 

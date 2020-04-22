@@ -32,15 +32,26 @@ def main():
 def intro():
     return render_template('introduce.html', name=name)
 
+#기업정보-기업소개
+@app.route('/vision')
+def vision():
+    return render_template('vision.html', name=name)
+
 #제품구매-드론구매
 @app.route('/dron-order')
 def dronorder():
     return render_template('dron-order.html', name=name)
 
+#드론관리-드론정보
+@app.route('/dron-info')
+def droninfo():
+    return render_template('dron-info.html', name=name)
+
 #화면기본틀 html
 @app.route('/text')
 def text():
     return render_template('text.html', name=name)
+
 
 #실시간 탐지 html
 @app.route('/real-time')
