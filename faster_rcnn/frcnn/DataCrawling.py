@@ -10,8 +10,7 @@ browser = webdriver.Chrome('chromedriver.exe')
 # Need to Chrome driver - https://chromedriver.chromium.org/downloads
 count = 0
 
-keyword = '균열' # search keyword
-
+keyword = 'sky' # search keyword
 
 photo_list = []
 result = []
@@ -23,6 +22,11 @@ if not os.path.exists(DEFAULT_PATH + '/' + keyword):
 # url open
 browser.get(url)
 time.sleep(1)
+
+body = browser.find_element_by_id('yDmH0d')
+for i in range(0, 200):
+    body.send_keys(Keys.PAGE_DOWN)
+    time.sleep(0.1)
 
 photo_list = browser.find_elements_by_tag_name("img.rg_i")
 
@@ -50,6 +54,7 @@ for i in range(0, len(photo_list)):
             continue
     except Exception as e:
         print(e)
+        continue
 
 
     if index < 500:
@@ -64,6 +69,8 @@ for i in range(0, len(photo_list)):
         break
     index += 1
     time.sleep(1)
+
+
     exit_button = browser.find_element_by_css_selector('#Sva75c > div > div > div:nth-child(2) > a > div > svg > polygon')
     exit_button.click()
 

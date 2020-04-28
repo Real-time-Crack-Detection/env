@@ -49,7 +49,7 @@ def nn_base(input_tensor=None, trainable=False):
         else:
             img_input = input_tensor
 
-    if K.image_dim_ordering() == 'tf':
+    if K.image_dim_ordering() == 'tf' or K.image_dim_ordering() == 'channels_last':
         bn_axis = 3
     else:
         bn_axis = 1
@@ -100,10 +100,10 @@ def classifier(base_layers, input_rois, num_rois, nb_classes = 21, trainable=Fal
 
     if K.backend() == 'tensorflow':
         pooling_regions = 7
-        input_shape = (num_rois,7,7,512)
+        input_shape = (num_rois, 7, 7, 512)
     elif K.backend() == 'theano':
         pooling_regions = 7
-        input_shape = (num_rois,512,7,7)
+        input_shape = (num_rois, 512, 7, 7)
 
     out_roi_pool = RoiPoolingConv(pooling_regions, num_rois)([base_layers, input_rois])
 

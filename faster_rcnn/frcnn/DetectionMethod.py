@@ -131,7 +131,6 @@ def image_twoPath_load(path1, path2, IMAGE_SIZE, save_name = '', thresh = 0, suf
     return image_x
 
 
-### 아직 라벨 만드는 건 익숙치 않아서, 하드 코딩으로 하도록 함.. ###
 def label_make(image_x, threshold=None):
     # threshold는 임계값으로, po - ne가 몇 번째부터 나누어지는지를 의미함.
     # ex. po 3000개, ne 3000개 => 3001번째부터 나누어지므로, threshold는 3000임.
@@ -150,24 +149,248 @@ def label_make(image_x, threshold=None):
     labels = np.asarray(labels, dtype=np.float32)
     return labels
 
-# move_file_to_path(POSITIVE_PATH, TRAIN_PATH, limit=15000)
-# move_file_to_path(NEGATIVE_PATH, TRAIN_PATH, limit=15000)
-#TEMP_PATH = './Dataset/surface-crack-detection/temp'
-#image_load(TEMP_PATH, IMAGE_SIZE, 'test_train.npy', False)
-#image_load(TEMP_PATH, IMAGE_SIZE, 'test_test.npy', False)
+import os
+import shutil
+import numpy as np
+import time
 
-# list_image = os.listdir(NEGATIVE_PATH)
-# count = 1
-# for img in list_image[15000:]:
-#     shutil.copy(NEGATIVE_PATH + '/' + img, TEST_PATH + '/' + img)
-#
-# list_image = os.listdir(POSITIVE_PATH)
-# count = 1
-# for img in list_image[15000:]:
-#     shutil.copy(POSITIVE_PATH + '/' + img, TEST_PATH + '/' + img)\
-#image_twoPath_load(NEGATIVE_PATH, POSITIVE_PATH, IMAGE_SIZE, 'test_train.npy', thresh=100)
-#image_twoPath_load(NEGATIVE_PATH, POSITIVE_PATH, IMAGE_SIZE, 'test_test.npy', thresh=100)
-# image_twoPath_load(NEGATIVE_PATH, POSITIVE_PATH, IMAGE_SIZE, 'Train3.npy', thresh=15000)
-# image_twoPath_load(NEGATIVE_PATH, POSITIVE_PATH, IMAGE_SIZE, 'Train4.npy', thresh=20000)
+FILES_PATH = './data/img'
+TRAIN_TXT_PATH = './data/simpletrain.txt'
+TEXT_DES_PATH = './data/txt'
+IMAGE_DES_PATH = './data/img'
 
-#image_load(TEST_PATH, IMAGE_SIZE, 'Test.npy')
+if not os.path.exists(TEXT_DES_PATH):
+    os.mkdir(TEXT_DES_PATH)
+if not os.path.exists(IMAGE_DES_PATH):
+    os.mkdir(IMAGE_DES_PATH)
+
+
+def copy_file(src, txt_des, img_des):
+
+
+    files = os.listdir(FILES_PATH)
+    txts = []
+
+    imgs = []
+
+    for i in files:
+        ext = i.split('.')[-1]
+        if ext == 'txt':
+            txts.append(i)
+        else:
+            imgs.append(i)
+
+    for t in txts:
+        shutil.copy(src + '/' + t, txt_des + '/' + t)
+
+    for i in imgs:
+        shutil.copy(src + '/' + i, img_des + '/' + i)
+
+    print('File copy is done.')
+
+def create_simple_train_file(filepath, txt_src, img_src):
+    txts = os.listdir(txt_src)
+    imgs = os.listdir(img_src)
+
+    for t in txts:
+        img_path = ''
+
+        for i in imgs:
+            if i[:-4] == t[:-4]:
+                img_path = i
+                break
+
+        if img_path is '':
+            continue
+
+        with open(txt_src + '/' + t, 'r') as f:
+            while True:
+                line = f.readline()
+                if line is None or line == '':
+                    break
+                print(line)
+                data = line.split(' ')
+
+                classes = data[0]
+                x1 = int(float(data[1]) * 512)
+                y1 = int(float(data[2]) * 512)
+                x2 = int(float(data[3]) * 512)
+                y2 = int(float(data[4]) * 512)
+
+                class_name = ''
+
+                if classes == '0':
+                    class_name = 'crack'
+                elif classes == '1':
+                    class_name = 'horizon crack'
+                elif classes == '2':
+                    class_name = 'vertical crack'
+                else:
+                    class_name = 'step crack'
+
+                with open(filepath, 'a') as fe:
+                    one_line = img_src + '/' + img_path + ',' + str(x1) + ',' + str(y1) + ',' + str(x2) + ',' + str(y2) + ',' + class_name + '\n'
+                    fe.write(one_line)
+
+import cv2 as cv
+
+def change_imgsize(filepath):
+	imgs = os.listdir(filepath)
+
+	cutoff = 0
+	count = 0
+
+	for i in imgs:
+		image = cv.imread(filepath + '/' + i)
+
+		if count == 0:
+			image = cv.resize(image, (92, 92))
+		elif count == 1 or count == 2:
+			image = cv.resize(image, (152, 152))
+		else:
+			image = cv.resize(image, (196, 196))
+
+
+		cv.imwrite(filepath + '/' + i, image)
+
+		cutoff += 1
+
+		if cutoff >= 5000:
+			count += 1
+			cutofff = 0
+
+def create_train_data(filepath):
+    files = os.listdir(filepath)
+
+    for f in files:
+        image = cv.imread(filepath + '/' + f)
+
+        h, w = image.shape[:2]
+
+        image2 = cv.resize(image, None, fx=0.5, fy=1, interpolation=cv.INTER_AREA)
+        image3 = cv.resize(image, None, fx=1, fy=0.5, interpolation=cv.INTER_AREA)
+        image4 = cv.resize(image, None, fx=0.5, fy=0.5, interpolation=cv.INTER_AREA)
+        cv.imwrite(filepath + '/x05y1_image_' + f, image2)
+        cv.imwrite(filepath + '/x1y05_image_' + f, image3)
+        cv.imwrite(filepath + '/x05y05_image_' + f, image4)
+
+        filp_image = cv.flip(image, 1)
+        cv.imwrite(filepath + '/f_image_' + f, filp_image)
+        image2 = cv.resize(filp_image, None, fx=0.5, fy=1, interpolation=cv.INTER_AREA)
+        image3 = cv.resize(filp_image, None, fx=1, fy=0.5, interpolation=cv.INTER_AREA)
+        image4 = cv.resize(filp_image, None, fx=0.5, fy=0.5, interpolation=cv.INTER_AREA)
+        cv.imwrite(filepath + '/fx05y1_image_' + f, image2)
+        cv.imwrite(filepath + '/fx1y05_image_' + f, image3)
+        cv.imwrite(filepath + '/fx05y05_image_' + f, image4)
+
+
+def create_edge_image(filepath, desPath):
+
+    files = os.listdir(filepath)
+
+    totalTime = 0
+
+    if not os.path.exists(desPath):
+        os.mkdir(desPath)
+
+    for f in files:
+        start = time.time()
+        image = cv.imread(filepath + '/' + f)
+        copy = image.copy()
+        image2 = cv.cvtColor(copy, cv.COLOR_BGR2GRAY)
+        # Image read and convert Gray Level.
+
+        blur = cv.GaussianBlur(image2, (3, 3), 0)
+        # It is need to run canny edge function
+        canny = cv.Canny(blur, 60, 255)
+        # canny edge detection
+
+        cv.imwrite(desPath + '/' + f, canny)
+        end = time.time()
+
+        totalTime += (end - start)
+
+    print('Done : average time : ', totalTime / 20000)
+
+
+def divide_data_set(filepath, type):
+    files = os.listdir(filepath)
+    limit = 5000
+    count = 1
+    saveIndex = 0
+
+    images = []
+
+    if type == 'binary':
+        for f in files:
+
+            if count >= limit:
+                np.save('crack_train_ne' + str(saveIndex) + '.npy', images)
+                images.clear()
+                saveIndex += 1
+                count = 1
+
+            image = cv.imread(filepath + '/' + f, cv.IMREAD_GRAYSCALE)
+            images.append(image)
+            count += 1
+
+def write_train_file(imgpath, txtpath, type):
+	imgfiles = os.listdir(imgpath)
+
+	with open(txtpath , 'a') as fe:
+		for f in imgfiles:
+			img = cv.imread(imgpath + '/' + f)
+
+			x1 = 0
+			y1 = 0
+
+			x2, y2, _ = img.shape
+
+			x1 = str(x1)
+			y1 = str(y1)
+			x2 = str(x2)
+			y2 = str(y2)
+
+			one_line = imgpath + '/' + f + ',' + x1 + ',' + y1 + ',' + x2 + ',' + y2 + ',' + type +'\n'
+
+			fe.write(one_line)
+
+
+def make_csv_file(path, class_label):
+    datas = os.listdir(path)
+
+    with open('./classification_file.csv', 'a') as f:
+        for d in datas:
+            line = path + '/' + d + ',' + str(class_label) + '\n'
+
+            f.write(line)
+
+# make_csv_file('./SDNET2018/D/CD', 0)
+# make_csv_file('./SDNET2018/D/UD', 1)
+# make_csv_file('./SDNET2018/P/CP', 2)
+# make_csv_file('./SDNET2018/P/UP', 3)
+# make_csv_file('./SDNET2018/W/CW', 4)
+# make_csv_file('./SDNET2018/W/UW', 5)
+#create_train_data('./cracks/fixed_sky')
+#change_imgsize('./cracks/Negative')
+#change_imgsize('./cracks/Positive')
+#write_train_file('./cracks/Positive', './trainData/simpletrain.txt', 'coarse crack')
+#write_train_file('./SDNET2018small/P/CP', './trainData/simpletrain.txt', 'coarse crack')
+# write_train_file('./SDNET2018/P/UP', './trainData/simpletrain.txt', 'coarse wall')
+#write_train_file('./SDNET2018small/D/CD', './trainData/simpletrain.txt', 'find crack')
+#write_train_file('./SDNET2018/D/UD', './trainData/simpletrain.txt', 'find wall')
+#write_train_file('./SDNET2018small/W/CW', './trainData/simpletrain.txt', 'inclusion crack')
+# write_train_file('./SDNET2018/W/UW', './trainData/simpletrain.txt', 'inclusion wall')
+# change_imgsize('./SDNET2018small/P/CP')
+# change_imgsize('./SDNET2018small/P/UP')
+# change_imgsize('./SDNET2018small/D/CD')
+# change_imgsize('./SDNET2018small/D/UD')
+# change_imgsize('./SDNET2018small/W/CW')
+# change_imgsize('./SDNET2018small/W/UW')
+#create_temp('./cracks/fixed_sky', './trainData/simpletrain.txt')
+#create_temp('./cracks/Positive', './trainData/simpletrain.txt')
+#create_simple_train_file(TRAIN_TXT_PATH, TEXT_DES_PATH, IMAGE_DES_PATH)
+#create_edge_image('./cracks/Positive', './cracks/edge_positive')
+#create_edge_image('./cracks/Negative', './cracks/edge_negative')
+#divide_data_set('./cracks/edge_positive', type='binary')
+#divide_data_set('./cracks/edge_negative', type='binary')

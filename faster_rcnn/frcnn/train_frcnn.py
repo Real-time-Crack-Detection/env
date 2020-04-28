@@ -36,6 +36,7 @@ parser.add_option("--config_filename", dest="config_filename", help=
 parser.add_option("--output_weight_path", dest="output_weight_path", help="Output path for weights.", default='./model_frcnn.hdf5')
 parser.add_option("--input_weight_path", dest="input_weight_path", help="Input path for weights. If not specified, will try to load default weights provided by keras.")
 
+
 (options, args) = parser.parse_args()
 
 if not options.train_path:   # if filename is not given
@@ -89,6 +90,7 @@ inv_map = {v: k for k, v in class_mapping.items()}
 print('Training images per class:')
 pprint.pprint(classes_count)
 print('Num classes (including bg) = {}'.format(len(classes_count)))
+
 
 config_output_filename = options.config_filename
 
