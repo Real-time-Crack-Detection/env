@@ -13,6 +13,9 @@
             border: 1px solid black;
             text-align: center;
         }
+.modal-body div{float:left; width: 100%}
+.modal-body div p{float:left; width: 20%; font-weight: 600;}
+.modal-body div span{float:left; width: 80%}
     </style>
 </head>
 
@@ -31,8 +34,35 @@
   <div class="container">
       <h2 class="font-weight-bold deep-orange-lighter-hover mb-3"> 내역 조회</h2>
       <hr/>
+
          <!-- DataTable -->
-      <table id="datatable" class="display" style="width: 100%"></table>
+      <table id="datatable" class="display" style="width: 100%">
+      </table>
+
+      <!-- Modal -->  <!-- Modal 여기에 추가!! -->
+<div class="modal fade" id="myModal" role="dialog">
+<div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">User Details</h4>
+    </div>
+    <div class="modal-body">
+      <div class="title"><p>Title: </p><span></span></div>
+      <div class="saveDate"><p>Save_Date: </p><span></span></div>
+      <div class="path"><p>Path: </p><span></span></div>
+      <div class="comment"><p>Comment: </p><span></span></div>
+      <div class="a"><p>A: </p><span></span></div>
+      <div class="b"><p>B: </p><span></span></div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
       <hr/>
   </div>
 </main>
@@ -60,17 +90,20 @@
     new WOW().init();
 </script>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
-<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
-<link href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" type="text/css" rel="stylesheet">
-
-<script type="text/javascript" src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
 
 <!--datatable-->
 <script>var record = {{ result_data|tojson }};</script>
 <script type="text/javascript" src="static/js/table.js"></script>
+
+
 
 </body>
 

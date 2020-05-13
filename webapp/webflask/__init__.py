@@ -6,6 +6,7 @@ from sqlalchemy import *
 from signup import *
 from login import *
 from viewhistory import *
+from streaming import *
 
 SQL_ID = "integer"
 SQL_PASS = "dmswjd331"
@@ -53,15 +54,21 @@ def text():
     return render_template('text.html', name=name)
 
 
+
 #실시간 탐지 html
 @app.route('/real-time')
 def time():
-    return render_template('real-time.html', name=name)
+#    import threading
+#    t = threading.Thread(target=streaming)
+#    t.start()
+#    print("asdsasa")
+    return render_template('real-time.html', name=name, image_file="img/testimg.jpg")
 
 #내역조회 html
 @app.route('/history')
 def history():
     result_data = view_history(session, code)
+
     return render_template('view-history.html', name=name, result_data=result_data)
 
 # sign up 버튼 클릭시 db로 데이터 insert
@@ -83,6 +90,3 @@ def loginButton():
 # 임시 진입점
 if __name__ == "__main__":
     app.run(host='127.0.0.1')  # 127.0.0.1 ==localhost
-
-
-

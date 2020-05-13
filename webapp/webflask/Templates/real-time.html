@@ -32,8 +32,12 @@
     <div class="w3-row-padding" style="margin-bottom:128px">
 
       <div class="w3-half">
-        <img src="static/img/crack1.png" alt="" style="width: 100%">
-        <button type="button" class="btn btn-secondary">판단</button>
+        {% if True %}
+        <video width="500" height="500" loop autoplay>
+          <source src ="static/testvideo.webm">
+        </video>
+        {% endif %}
+
       </div>
 
       <div class="w3-half">
