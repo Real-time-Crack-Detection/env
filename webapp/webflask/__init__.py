@@ -88,5 +88,5 @@ def loginButton():
     return render_template('base.html', name=name)
 
 # 임시 진입점
-if __name__ == "__main__":
-    app.run(host='127.0.0.1')  # 127.0.0.1 ==localhost
+#if __name__ == "__main__":
+app.run(host='127.0.0.1')  # 127.0.0.1 ==localhost

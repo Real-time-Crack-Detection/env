@@ -1,4 +1,4 @@
-from __init__ import request
+from flask import request
 from sqlalchemy import text
 
 def log_in(session):

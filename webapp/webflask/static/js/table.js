@@ -3,7 +3,7 @@ $(document).ready(function () {
         data: record
 
         ,columns:[
-            {title:"Title"},
+            {title: "Title"},
             {title: "save_date"},
             {title: "path"},
             {title: "comment"}
@@ -36,8 +36,8 @@ var table = $('#datatable').DataTable();
         $(".saveDate span").text(table.row(this).data()[1]);
         $(".path span").text(table.row(this).data()[2]);
         $(".comment span").text(table.row(this).data()[3]);
-        $(".a span").text(table.row(this).data()[4]);
-        $(".b span").text(table.row(this).data()[5]);
+        $(".a").attr("src", table.row(this).data()[2]+"/"+table.row(this).data()[0]);
+        $(".b").attr("src", table.row(this).data()[2]+"/"+table.row(this).data()[4]);
         $("#myModal").modal("show");
     });
 

@@ -1,4 +1,4 @@
-from __init__ import request
+from flask import request
 from models import *
 
 def sign_up(session):
