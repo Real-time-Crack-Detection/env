@@ -58,10 +58,6 @@ def text():
 #실시간 탐지 html
 @app.route('/real-time')
 def time():
-#    import threading
-#    t = threading.Thread(target=streaming)
-#    t.start()
-#    print("asdsasa")
     return render_template('real-time.html', name=name, image_file="img/testimg.jpg")
 
 #내역조회 html
@@ -86,6 +82,12 @@ def loginButton():
     name, code = log_in(session)
 
     return render_template('base.html', name=name)
+
+# 기록 눌렀을 시 화면
+@app.route('/save', methods = ['POST'])
+def saving():
+    save(session, code)
+    return render_template('/real-time.html')
 
 # 임시 진입점
 #if __name__ == "__main__":

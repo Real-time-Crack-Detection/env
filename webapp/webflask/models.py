@@ -8,9 +8,12 @@ db = SQLAlchemy()
 class Image(db.Model):
     __tablename__ = 'image'
 
-    number = db.Column(db.Integer, primary_key=True)
     path = db.Column(db.String(100))
     save_date = db.Column(db.DateTime)
+    code = db.Column(db.String(50))
+    comment = db.Column(db.String(100))
+    title1 = db.Column(db.String(50))
+    title2 = db.Column(db.String(50))
 
 class User(db.Model):
     __tablename__ = 'user'

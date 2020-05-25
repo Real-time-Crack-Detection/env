@@ -32,7 +32,7 @@
 
       <div class="w3-half">
         {% if True %}
-        <img src ="http://192.168.137.21:30000/?action=stream" width="500" id="crack1">
+        <img src ="http://192.168.137.234:30000/?action=stream" width="500" id="crack1">
         {% endif %}
 
       </div>
@@ -46,8 +46,16 @@
               var crackimg1 = document.getElementById("crack1").getAttribute("src");
               var crackimg2 = document.getElementById("crack2").getAttribute("src");
 
-              document.getElementById("modal_crack1").setAttribute("src", crackimg1);
-              document.getElementById("modal_crack2").setAttribute("src", crackimg2);
+              var $a = $("<a>").attr("href", crackimg1).attr({"download": "http://localhost:5000/static/img/crack1_save.png"}).appendTo("body");
+              $a[0].click();
+              $a.remove();
+
+              var $a = $("<a>").attr("href", crackimg2).attr({"download": "http://localhost:5000/static/img/crack2_save.png"}).appendTo("body");
+              $a[0].click();
+              $a.remove();
+
+              document.getElementById("modal_crack1").setAttribute("src", "static/img/crack1_save.png");
+              document.getElementById("modal_crack2").setAttribute("src", "static/img/crack2_save.png");
             };
           </script>
           <!-- modal 구동 버튼 (trigger) -->
@@ -69,10 +77,10 @@
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-5">
-                        <img src="static/img/crack1.png" style="width:100%" id="modal_crack1">
+                        <img src="" style="width:100%" id="modal_crack1">
                       </div>
                       <div class="col-md-5">
-                        <img src="static/img/crack2.png" style="width:100%" id="modal_crack2">
+                        <img src="" style="width:100%" id="modal_crack2">
                       </div>
                     </div>
                   </div>
