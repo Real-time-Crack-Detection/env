@@ -17,5 +17,4 @@ CREATE TABLE `image` (
   `comment` varchar(100) DEFAULT NULL,
   `title1` varchar(50) DEFAULT NULL,
   `title2` varchar(50) DEFAULT NULL
-  PRIMARY KEY (`title1`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
