@@ -12,7 +12,7 @@ class Image(db.Model):
     save_date = db.Column(db.DateTime)
     code = db.Column(db.String(50))
     comment = db.Column(db.String(100))
-    title1 = db.Column(db.String(50))
+    title1 = db.Column(db.String(50), primary_key=True)
     title2 = db.Column(db.String(50))
 
 class User(db.Model):

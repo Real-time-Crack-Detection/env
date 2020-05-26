@@ -6,7 +6,6 @@ from sqlalchemy import *
 from signup import *
 from login import *
 from viewhistory import *
-from streaming import *
 
 SQL_ID = "integer"
 SQL_PASS = "dmswjd331"

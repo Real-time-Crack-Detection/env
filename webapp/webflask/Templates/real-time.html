@@ -41,63 +41,8 @@
         <img src="static/img/crack2.png" alt="" style="width: 100%" id="crack2">
         <div align="right">
 
-          <script>
-            function crackimg() {
-              var crackimg1 = document.getElementById("crack1").getAttribute("src");
-              var crackimg2 = document.getElementById("crack2").getAttribute("src");
-
-              var $a = $("<a>").attr("href", crackimg1).attr({"download": "http://localhost:5000/static/img/crack1_save.png"}).appendTo("body");
-              $a[0].click();
-              $a.remove();
-
-              var $a = $("<a>").attr("href", crackimg2).attr({"download": "http://localhost:5000/static/img/crack2_save.png"}).appendTo("body");
-              $a[0].click();
-              $a.remove();
-
-              document.getElementById("modal_crack1").setAttribute("src", "static/img/crack1_save.png");
-              document.getElementById("modal_crack2").setAttribute("src", "static/img/crack2_save.png");
-            };
-          </script>
-          <!-- modal 구동 버튼 (trigger) -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="crackimg()">기록</button>
+          <button type="button" class="btn btn-primary" formaction="http://localhost:5000/save">기록</button>
         </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">기록</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              </div>
-
-              <!--이미지, comment 내용-->
-              <div class="modal-body">
-                <form>
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <img src="" style="width:100%" id="modal_crack1">
-                      </div>
-                      <div class="col-md-5">
-                        <img src="" style="width:100%" id="modal_crack2">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Comment:</label>
-                    <textarea class="form-control" id="message-text"></textarea>
-                  </div>
-                </form>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-                <button type="button" class="btn btn-primary">저장</button>
-              </div>
-            </div>
-          </div></div>
       </div>
 
     </div>
