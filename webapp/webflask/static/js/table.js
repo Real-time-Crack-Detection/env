@@ -30,14 +30,14 @@ $(document).ready(function () {
 
 var table = $('#datatable').DataTable();
     $('#datatable tbody').on('click', 'tr', function () {
-        //console.log(table.row(this).data());
         $(".modal-body div span").text("");
         $(".title span").text(table.row(this).data()[0]);
         $(".saveDate span").text(table.row(this).data()[1]);
         $(".path span").text(table.row(this).data()[2]);
-        $(".comment span").text(table.row(this).data()[3]);
+        $(".comment input").val(table.row(this).data()[3]);
         $(".a").attr("src", table.row(this).data()[2]+"/"+table.row(this).data()[0]);
         $(".b").attr("src", table.row(this).data()[2]+"/"+table.row(this).data()[4]);
+        $(".hide input").val(table.row(this).data()[0]);
         $("#myModal").modal("show");
     });
 

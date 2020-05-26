@@ -48,14 +48,19 @@
       <h4 class="modal-title">User Details</h4>
     </div>
     <div class="modal-body">
-      <div class="title"><p>Title: </p><span></span></div>
+      <form action="http://localhost:5000/addcomment" method="post">
+      <div class="title" id="title"><p>Title: </p><span></span></div>
       <div class="saveDate"><p>Save_Date: </p><span></span></div>
       <div class="path"><p>Path: </p><span></span></div>
-      <div class="comment"><p>Comment: </p><span></span></div>
-      <img class="a" src ="" width="200"/>
-      <img class="b" src ="" width="200"/>
+      <div class="comment"><p>Comment: </p><span></span><input type="text" name="addcommenttext"></div>
+      <img class="a" src ="" width="230"/>
+      <img class="b" src ="" width="230"/>
+      <div class="hide"><input type="hidden" name="hiddenvalue"></div>
     </div>
     <div class="modal-footer">
+
+        <button type="submit" class="btn btn-primary" formaction="http://localhost:5000/addcomment">수정완료</button>
+      </form>
       <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
     </div>
   </div>

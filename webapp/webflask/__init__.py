@@ -6,6 +6,11 @@ from sqlalchemy import *
 from signup import *
 from login import *
 from viewhistory import *
+from save import *
+from add_comment import *
+from test import *
+from multiprocessing import Process
+
 
 SQL_ID = "integer"
 SQL_PASS = "dmswjd331"
@@ -21,6 +26,18 @@ session = db.session
 
 name = "Sign in"
 code = ""
+
+@app.after_request
+def add_header(r):
+    """
+    Add headers to both force latest IE rendering engine or Chrome Frame,
+    and also to cache the rendered page for 10 minutes.
+    """
+
+    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    r.headers["Pragma"] = "no-cache"
+    r.headers["Expires"] = "0"
+    return r
 
 #첫 home 화면
 @app.route('/')
@@ -51,8 +68,6 @@ def droninfo():
 @app.route('/text')
 def text():
     return render_template('text.html', name=name)
-
-
 
 #실시간 탐지 html
 @app.route('/real-time')
@@ -86,8 +101,23 @@ def loginButton():
 @app.route('/save', methods = ['POST'])
 def saving():
     save(session, code)
-    return render_template('/real-time.html')
+    return render_template('real-time.html', name=name)
+
+
+# 코멘트 변경시 화면
+@app.route('/addcomment', methods = ['POST'])
+def addcomment():
+    addComment(session)
+    result_data = view_history(session, code)
+    return render_template('view-history.html', name=name, result_data=result_data)
+
+def run():
+    app.run(host='127.0.0.1')  # 127.0.0.1 ==localhost
 
 # 임시 진입점
-#if __name__ == "__main__":
-app.run(host='127.0.0.1')  # 127.0.0.1 ==localhost
+if __name__ == "__main__":
+    p1 = Process(target=receiving)
+    p2 = Process(target=run)
+
+    p1.start()
+    p2.start()
