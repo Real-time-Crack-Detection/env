@@ -37,6 +37,7 @@ var table = $('#datatable').DataTable();
         $(".comment input").val(table.row(this).data()[3]);
         $(".a").attr("src", table.row(this).data()[2]+"/"+table.row(this).data()[0]);
         $(".b").attr("src", table.row(this).data()[2]+"/"+table.row(this).data()[4]);
+        $(".c").attr("src", table.row(this).data()[2]+"/"+table.row(this).data()[5]);
         $(".hide input").val(table.row(this).data()[0]);
         $("#myModal").modal("show");
     });

@@ -69,6 +69,11 @@ def droninfo():
 def text():
     return render_template('text.html', name=name)
 
+#로딩페이지 html
+@app.route('/loading')
+def load():
+    return render_template('loading.html', name=name)
+
 #실시간 탐지 html
 @app.route('/real-time')
 def time():
@@ -116,8 +121,8 @@ def run():
 
 # 임시 진입점
 if __name__ == "__main__":
-    p1 = Process(target=receiving)
+#    p1 = Process(target=receiving)
     p2 = Process(target=run)
 
-    p1.start()
+#    p1.start()
     p2.start()

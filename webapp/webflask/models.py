@@ -13,8 +13,11 @@ class Image(db.Model):
     code = db.Column(db.String(50))
     comment = db.Column(db.String(100))
     title1 = db.Column(db.String(50), primary_key=True)
-    title2 = db.Column(db.String(50))
-
+    title2 = db.Column(db.String(50)),
+    title3 = db.Column(db.String(50)),
+    longitude = db.Column(db.String(20)),
+    latitude = db.Column(db.String(20)),
+    altitude = db.Column(db.String(20))
 class User(db.Model):
     __tablename__ = 'user'
 

@@ -1,0 +1,65 @@
+<!---------- loading --------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'inc/head-sub.html' ignore missing %}
+  <style>
+    h1, h4 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <!-- Navbar -->
+  {% include 'inc/navbar.html' ignore missing %}
+  <!-- Navbar -->
+</header>
+
+<!--Main layout-->
+<main class="mt-5 pt-4" style="height: 600px">
+  <!--container dark-grey-text: 상단여백(mt) 5크기 설정함.-->
+  <!--container 안에 코드 작성해야 상단,좌우 여백 자동으로 맞춰짐.-->
+  <div class="container dark-grey-text mt-5">
+      <h1 id="load">잠시만 기다려주세요</h1><br>
+      <h4>연결 정보를 구성하고 있습니다</h4>
+  </div>
+  <script>
+    setTimeout(function () {
+       location.href="http://127.0.0.1:5000/real-time";
+    }, 3000);
+    function text() {
+      document.getElementById("load").innerHTML += ".";
+    }
+    setInterval(text,700);
+  </script>
+</main>
+
+<!--Footer-->
+{% include 'inc/footer.html' ignore missing %}
+<!--/.Footer-->
+
+<!-- Modal -->
+{% include 'inc/modal.html' ignore missing %}
+<!--/.Modal-->
+
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="static/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="static/js/mdb.min.js"></script>
+<!-- Initializations -->
+<script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+
+  </script>
+</body>
+
+</html>

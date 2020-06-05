@@ -10,7 +10,7 @@ def view_history(session, code):
     path = session.query('path').from_statement(text("select * from image where code = " + code)).all()
     comment = session.query('comment').from_statement(text("select * from image where code = " + code)).all()
     title2 = session.query('title2').from_statement(text("select * from image where code = " + code)).all()
-
+    title3 = session.query('title3').from_statement(text("select * from image where code = " + code)).all()
     result_data = []
 
     for i in range(len(title1)):
@@ -20,4 +20,5 @@ def view_history(session, code):
         result_data[i].append(path[i])
         result_data[i].append(comment[i])
         result_data[i].append(title2[i])
+        result_data[i].append(title3[i])
     return result_data
