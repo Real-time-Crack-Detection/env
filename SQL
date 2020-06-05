@@ -1,0 +1,24 @@
+create database capstone;
+
+CREATE TABLE user (
+  id varchar(50) NOT NULL,
+  password varchar(50) DEFAULT NULL,
+  name varchar(50) DEFAULT NULL,
+  email varchar(50) DEFAULT NULL,
+  phonenumber varchar(50) DEFAULT NULL,
+  code varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE image (
+  path varchar(100) DEFAULT NULL,
+  save_date datetime DEFAULT NULL,
+  code varchar(50) DEFAULT NULL,
+  comment varchar(100) DEFAULT NULL,
+  title1 varchar(50) DEFAULT NULL,
+  title2 varchar(50) DEFAULT NULL,
+  title3 varchar(50) DEFAULT NULL,
+  longitude varchar(20) DEFAULT NULL,
+  latitude varchar(20) DEFAULT NULL,
+  altitude varchar(20) DEFAULT NULL
+);
